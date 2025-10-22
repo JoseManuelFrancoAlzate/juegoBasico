@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JB</title>
     <link rel="stylesheet" href="juegoBasico.css">
+    <link rel="icon" type="image/png" href="imagenes/J.png">
 </head>
-<body>
+<body class="fondo">
+    <div class="contenedorCentral">
+    <button class="botonSonido" id="botonSonido">
+    <img class="imagenSonido" src="imagenes/iconoSonido.png" alt="Boton Inicio">
+    </button> 
     <h1 class="titulo">Juego Basico</h1>
-    <p class="subTitulo">Este sera un juego basico</p>
-</body>
+    <audio id="musicaFondo" src="audios/Moon Over Milan.mp3" autoplay loop></audio>
+    <button class="botonPlay">Play</button>
+    </div>
+    <script src="juegoBasico.js"></script>
+</body>  
 </html>
+<!--
+ Intro  
+ Primero diseño de personaje, 
+ luego que al hacer clic en cualquier parte de la pantalla el personaje se mueva ---
+
+ //https://www.youtube.com/watch?v=zxFinWzH9IQ&list=RDn7YsXoz03pI&index=9

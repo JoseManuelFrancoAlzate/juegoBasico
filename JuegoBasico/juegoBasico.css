@@ -1,6 +1,137 @@
-.titulo{
-    color: orange
+/* === Importa ambas fuentes desde Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Cinzel+Decorative:wght@700&display=swap');
+
+
+.contenedorCentral{
+  display: grid; /* Convierte el div padre en un contenedor de cuadrícula */
+  place-items: center; /* Centra los elementos hijos tanto vertical como horizontalmente */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
 }
-.subTitulo{
-    color:blue
+
+.fondo{
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-paisaje-rural-gradiente_23-2150539919.jpg?semt=ais_hybrid&w=740&q=80);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+.titulo{    
+   /* Combina primero la fuente Cinzel y luego Freckle como alternativa */
+  font-family: 'Cinzel Decorative', 'Freckle Face', cursive;
+  /* Tamaño grande para que luzca imponente */
+  font-size: 56px;
+  /*mover verticalmente si hay fondo*/
+  padding-top: 50px;
+  /* Color base naranja-dorado */
+  color: #ff8c00;
+  /* Efecto de sombra combinando bordes, brillo y profundidad */
+  text-shadow:
+    2px 2px 0 #000,       /* contorno negro inferior derecho */
+   -2px -2px 0 #000,      /* contorno negro superior izquierdo */
+    0 0 10px #ffb347,     /* resplandor dorado */
+    0 0 25px #ff4500,     /* resplandor anaranjado intenso */
+    0 0 45px #cc5500;     /* fuego profundo */
+  /* Ligera inclinación tipo graffiti */
+  transform: rotate(-2.5deg) ;
+  /* Espaciado moderado entre letras */
+  letter-spacing: 3px;
+  /* Centrado horizontal */
+  text-align: center;
+  /* Margen para que no quede pegado a otros elementos */
+  margin: 40px 0;/*Sombra de texto*/
+    font-size: 10.0em; /*Letra mas grande*/   
+    text-align: center; /*centrar texto*/
+
+      /* === Aplica la animación === */
+    animation:mover 2s infinite ease-in-out;
+}
+.botonPlay{
+  /* Texto */
+  color: #000; /* Texto negro para contrastar con el amarillo */
+  font-size: 4rem; /* Tamaño grande del texto */
+  font-family: 'Freckle Face', cursive; /* Fuente divertida tipo videojuego */
+  text-shadow: 2px 2px 0 #fff00080; /* Brillo sutil */
+  letter-spacing: 3px;
+  transform: rotate(2.5deg) ;
+
+  margin-top: -40px; /* súbelo 40px, mueve hacia arriba */
+
+  /* Fondo amarillo con transparencia */
+  background-color: rgba(255, 215, 0, 0.8); /* Amarillo con opacidad del 80% */
+
+  /* Diseño general */
+  border: 3px solid #000; /* Borde negro tipo caricatura */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 20px 60px; /* Espaciado interno */
+  cursor: pointer;
+  text-align: center;
+  display: inline-block; /* Para que se centre fácilmente */
+  transition: all 0.3s ease; /* Suaviza los efectos hover */
+}
+
+.botonPlay:hover {
+  /* Efecto al pasar el mouse */
+  background-color: rgba(255, 230, 0, 1); /* Más brillante */
+  transform: rotate(0deg) scale(1.1); /* Se endereza y crece un poco */
+  box-shadow: 0 0 20px #ffdd00, 0 0 40px #ffaa00; /* Efecto de luz */
+}
+
+.imagenSonido{
+height: 50px;
+width: 50px;
+text-decoration: line-through;
+}
+
+.botonSonidoActivado{
+  background-color: #3cabdaab;
+height: 70px;
+width: 70px;
+position: absolute;
+top: 10px;
+left: 10px;
+cursor: pointer;
+text-decoration: line-through;
+}
+
+.botonSonido{
+background-color: #3cabdaab;
+height: 70px;
+width: 70px;
+position: absolute;
+top: 10px;
+left: 10px;
+cursor: pointer;
+text-decoration: line-through;
+}
+
+.botonSonido::before,
+.botonSonido::after{
+  content: ''; /* Crea un pseudo-elemento vacío (necesario para mostrar la línea) */
+  position: absolute; /* Permite posicionar la línea libremente dentro del botón */
+  top: 50%; /* Coloca la línea en el centro vertical del botón */
+  left: 50%; /* Hace que la línea empiece desde el borde izquierdo del botón */
+  width: 70%; /* La línea ocupa todo el ancho del botón */
+  height: 3px; /* Define el grosor de la línea (el “tachado”) */
+  background-color: rgb(212, 6, 6); /* Define el color de la línea */
+  transform-origin:center; /* punto de rotacion */
+}
+
+.botonSonido::before {
+transform: translate(-50%, -50%) rotate(45deg); /* Rota la línea 45 grados */
+}
+.botonSonido::after {
+transform: translate(-50%, -50%) rotate(-45deg); /* Rota la línea -45 grados */
+}
+.botonSonido:hover{
+background-color: #3cabdaff;
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0) rotate(-1.5deg); /* posición inicial */
+  }
+  50% {
+    transform: translateY(-20px) rotate(-1.5deg); /* sube 20px */
+  }
+  100% {
+    transform: translateY(0) rotate(-1.5deg); /* vuelve al inicio */
+  }
 }
