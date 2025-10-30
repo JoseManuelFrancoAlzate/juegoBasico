@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #ffffff;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300vw;
+  height: 300vw;
+  background: #101010;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1.5s ease-in-out;
+  z-index: 999;
+}
+
+#circle.shrink {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease 1.2s;
+}
+
+#circle.shrink + .content {
+  opacity: 1;
+}
+.boton-sonido {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #101010;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 16px;
+}
+
+.boton-sonido:hover {
+  background: #222;
+}

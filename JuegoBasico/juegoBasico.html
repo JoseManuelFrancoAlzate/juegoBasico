@@ -8,17 +8,35 @@
     <link rel="icon" type="image/png" href="imagenes/J.png">
 </head>
 <body class="fondo">
+    <div class="circle"></div>
     <div class="contenedorCentral">
     <button class="botonSonido" id="botonSonido">
     <img class="imagenSonido" src="imagenes/iconoSonido.png" alt="Boton Inicio">
     </button> 
-    <h1 class="titulo">Juego Basico</h1>
+    <h1 class="titulo">Juego Basico</h1> 
     <audio id="musicaFondo" src="audios/Moon Over Milan.mp3" autoplay loop></audio>
+    <audio id="sonidoPapel" src="audios/papel.mp3"></audio>
+    <audio id="sonidoPapelCerrar" src="audios/papelCerrar.mp3"></audio>
+    <audio id="transicion" src="audios/transicion.wav"></audio>
+
+    <div class="botones"> 
     <button class="botonPlay">Play</button>
+    <button id="botonCarta" class="botonCarta"> 
+    <img class="carta" src="./imagenes/cartaCerrada.png" id="carta" alt="Carta">
+    </button> 
+    <div class="overlay" id="overlay">
+    <div class="modalCarta" id="modalCarta">
+        <div class="modalContenidoCarta" id="modalContenidoCarta">
+      <span class="cerrarCarta" id="cerrarCarta"><b>&times;</b></span> 
+            <h2 class="tituloModal">Instrucciones del Juego</h2>
+        </div>
+        </div>
+    </div>
+    </div>
     </div>
     <script src="juegoBasico.js"></script>
 </body>  
-</html>
+</html> 
 <!--
  Intro  
  Primero diseño de personaje, 
